@@ -1,5 +1,5 @@
 module "public_label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.11.1"
+  source     = "git::https://github.com/geneames/terraform-null-label.git?ref=tags/0.11.1"
   context    = "${module.label.context}"
   attributes = "${compact(concat(module.label.attributes, list("public")))}"
   tags       = "${merge(module.label.tags, map(var.subnet_type_tag_key, format(var.subnet_type_tag_value_format, "public")))}"
